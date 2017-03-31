@@ -53,13 +53,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1 id="week-3-syntax-guide">Week 3: Syntax Guide</h1>
 <!-- TOC -->
 <ul>
-<li><a href="#week-3-syntax-guide">Week 3: Syntax Guide</a></li>
+<li><a href="#week-3-syntax-guide">Week 3: Syntax Guide</a>
+<ul>
 <li><a href="#if-statement">If Statement</a></li>
 <li><a href="#if-else-statement">If Else Statement</a></li>
 <li><a href="#enumeration-declaration">Enumeration Declaration</a></li>
 <li><a href="#while-loop">While Loop</a></li>
 <li><a href="#do-while-loop">Do While Loop</a></li>
 <li><a href="#switch-case-statement">Switch (Case Statement)</a></li>
+</ul></li>
 <li><a href="#example-code">Example Code</a></li>
 </ul>
 <!-- /TOC -->
@@ -137,9 +139,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>The <code>condition</code> needs to evaluate to a <strong>boolean</strong> value (true or false).</li>
 <li>The block or statement is executed, and then control returns back to the condition to determine if the block/statement should run again.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode cs"><code class="sourceCode cs"><span class="kw">while</span>( x &lt; <span class="dv">100</span> )
+<div class="sourceCode"><pre class="sourceCode cs"><code class="sourceCode cs"><span class="dt">int</span> x = <span class="dv">0</span>;
+
+<span class="kw">while</span>( x &lt; <span class="dv">100</span> )
 {
   Console.<span class="fu">WriteLine</span>(x);
+  x++;
+}
+
+<span class="kw">while</span>( x &gt; <span class="dv">0</span> )
+{
+  Console.<span class="fu">WriteLine</span>(x);
+  x--;
 }</code></pre></div>
 <p>All while loops consist of the condition expression, in this case it is: <code>( x &lt; 100 )</code>, and the body which will be executed many times: <code>Console.WriteLine(x);</code></p>
 <h2 id="do-while-loop">Do While Loop</h2>
@@ -151,11 +162,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>The <code>condition</code> needs to evaluate to a <strong>boolean</strong> value (true or false).</li>
 <li>The do while loop runs a block of code, at which point point it evaluates the boolean expression <code>x &lt; 100</code>. If is value is true, then the loop is rerun, otherwise the program continues on.</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode cs"><code class="sourceCode cs"><span class="kw">do</span>
+<div class="sourceCode"><pre class="sourceCode cs"><code class="sourceCode cs"><span class="dt">int</span> x = <span class="dv">0</span>;
+
+<span class="kw">do</span>
 {
   Console.<span class="fu">WriteLine</span>(x);
-}
-<span class="kw">while</span>( x &lt; <span class="dv">100</span> );</code></pre></div>
+  x++;
+} <span class="kw">while</span>( x &lt; <span class="dv">100</span> );
+
+<span class="kw">do</span>
+{
+  Console.<span class="fu">WriteLine</span>(x);
+  x--;
+} <span class="kw">while</span> ( x &gt; <span class="dv">0</span> );</code></pre></div>
 <p>All loops consist of the condition expression, in this case it is: <code>( x &lt; 100 )</code>, and the body which will be executed many times: <code>Console.WriteLine(x);</code></p>
 <h2 id="switch-case-statement">Switch (Case Statement)</h2>
 <p>A switch statement allows you to compare a value against a list of possible values, and execute a block of code which matches the case.</p>
